@@ -18,8 +18,12 @@ from django.contrib import admin
 from django.urls import path
 from myApp.urls import views
 
+from django.conf.urls.static import static
+from django.conf import settings
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('home/', views.home),
+    path("start", views.start, name="start"),
     path('', views.home),
-]
+]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
