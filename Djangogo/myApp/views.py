@@ -9,3 +9,6 @@ def home(request):
 
 def start(request):
     return HttpResponse("<p> Hello, world. You're at the polls index.</p> ")
+
+def error(request):
+    return render(request, "myApp/error.html",     )
